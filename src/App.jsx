@@ -1,5 +1,5 @@
 import { div } from "framer-motion/client"
-import NavBar from "./components/NavBar"
+import NavBar from "./components/NavBar";
 import Home from "./section/Home"
 import Skils from "./section/Skils"
 import Projects from "./section/Projects"
@@ -14,7 +14,7 @@ import React from "react"
 import IntroAnimation from "./components/IntroAnimation"
 
 function App() {
-  const [loding , setLoding] = useState(true)
+  const [introDone, setIntroDone] = useState(false);
   return(
     <>
     {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)}/> }
