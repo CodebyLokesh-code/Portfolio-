@@ -9,9 +9,16 @@ import Contact from "./section/Contact"
 import Footer from "./section/Footer"
 // import ParticlesBackground from "./components/ParticlesBackground"
 import CostomCursor from "./components/CostomCursor"
+import { useState } from "react"
+import React from "react"
+import IntroAnimation from "./components/IntroAnimation"
 
 function App() {
+  const [loding , setLoding] = useState(true)
   return(
+    <>
+    {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)}/> }
+      {introDone && (
     <div className="relative gradient text-white">
       <CostomCursor/>
       {/* <ParticlesBackground/> */}
@@ -24,6 +31,8 @@ function App() {
       <Contact/>
       <Footer/>
     </div>
+    )}
+    </>
   )
 }
 
