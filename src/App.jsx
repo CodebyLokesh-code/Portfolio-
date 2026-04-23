@@ -1,4 +1,4 @@
-import { div } from "framer-motion/client"
+import { motion } from "framer-motion"
 import NavBar from "./components/NavBar";
 import Home from "./section/Home"
 import Skils from "./section/Skils"
