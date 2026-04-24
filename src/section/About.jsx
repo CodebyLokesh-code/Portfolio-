@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react"
 
-function About() {
-  return (
-    <div className='w-full h-screen'
-    >About</div>
+
+export default function About(){
+  return(
+    <div id="about" className="min-h-screen w-full flex items-center justify-center relative bg-black text-white ">
+
+    </div>
   )
 }
-
-export default About

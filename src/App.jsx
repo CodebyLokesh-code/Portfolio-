@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import NavBar from "./components/NavBar";
 import Home from "./section/Home"
+import About from "./section/About";
 import Skils from "./section/Skils"
 import Projects from "./section/Projects"
 import Experience from "./section/Experience"
@@ -23,6 +24,7 @@ function App() {
       <CostomCursor/>
       {/* <ParticlesBackground/> */}
       <NavBar/>
+      <About/>
       <Home/>
       <Skils/>
       <Projects/>

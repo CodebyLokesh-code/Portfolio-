@@ -106,7 +106,7 @@ React.useEffect(() => {
           animate={{opacity:1 , y:0}}
           transition={{duration:1}}
           >
-            Hello I'm
+            Hello, I'm
             <br />
             <span className='text-white font-bold text-4xl sm:text-6xl md:text-8xl lg:withespace-nowrap'>
               Lokesh Choudhary
