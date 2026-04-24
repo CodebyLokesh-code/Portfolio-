@@ -13,13 +13,12 @@ function NavBar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // ✅ Top par → always visible
       if (currentScrollY === 0) {
         setVisible(true);
         return;
       }
 
-      // ❌ Scroll ho raha hai → hide
+      
       setVisible(false);
 
       // 🧠 Scroll rukte hi → show (debounce)
