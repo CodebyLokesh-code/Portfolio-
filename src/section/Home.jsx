@@ -3,7 +3,6 @@ import { useMemo } from 'react'
 import ParticlesBackground from "../components/ParticlesBackground"
 import { motion}  from "framer-motion"
 import { FaLinkedin, FaXTwitter,FaGithub } from 'react-icons/fa6'
-import { a, filter, label } from 'framer-motion/client'
 import avator from "../assets/avator.png"
 
 
@@ -45,8 +44,6 @@ const socials = [
   {icon : FaXTwitter , label : "X", href : "https://x.com/C99412571Lokesh"},
   {icon : FaLinkedin , label : "Linkedin", href : "https://www.linkedin.com/in/lokesh-choudhary-47054a243/h"},
   {icon : FaGithub , label : "GitHub", href : "https://github.com/CodebyLokesh-code"},
-
-
 ]
 
 
@@ -74,14 +71,12 @@ React.useEffect(() => {
 }, [subIndex, index, deleting]);
 
   return (
-    <section id='home' className='w-full h-screen relative bg-black' overflow-hidden>
+    <section id='home' className='w-full h-screen relative bg-black overflow-hidden'>
       <ParticlesBackground/>
       <div className='absolute inset-0'>
         <div className='absolute -top-32 -left-32 w-[70vw] sm:w-[z-500vw] md:w-[40vw] h-[70vw] sm:h-[50vw] md:h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2] opacity-30 sm:opacity-20 md:opacity-10 blur-[100px] sm:blur-[130px] md:blur-[150px] animate-pulse'>
-
         </div>
         <div className='absolute bottom-0 right-0  w-[70vw] sm:w-[z-500vw] md:w-[40vw] h-[70vw] sm:h-[50vw] md:h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2] opacity-30 sm:opacity-20 md:opacity-10 blur-[100px] sm:blur-[130px] md:blur-[150px] animate-pulse delay-500'>
-
         </div>
       </div>
 
@@ -97,7 +92,6 @@ React.useEffect(() => {
             <span>
               {roles[index].substring(0,subIndex)}
             </span>
-
             <span className='inline-block w-[2px] ml-1 bg-white animate-pulse align-middle' style={{height:"1em"}}></span>
           </motion.div>
 
@@ -121,72 +115,75 @@ React.useEffect(() => {
             web experience -- building morden , scalable, and  <br />
             lightning-fast application that make a differance
           </motion.p>
+
+          {/* Buttons + Social Icons — sab ek line mein aligned */}
           <motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 0.8, duration: 0.8 }}
-  className='mt-10 flex flex-wrap items-center justify-center gap-6'
->
-  <a 
-    href="#Projects" 
-    className='inline-block px-6 py-3 rounded-full font-medium text-white bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-transform duration-300'
-  >
-    View My Work
-  </a>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className='mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4'
+          >
+            <a 
+              href="#Projects" 
+              className='inline-block px-6 py-3 rounded-full font-medium text-white bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-transform duration-300'
+            >
+              View My Work
+            </a>
+            <a 
+              href="/resume.pdf" download 
+              className='inline-block px-6 py-3 rounded-full text-white border border-white hover:scale-105 transition-transform duration-300'
+            >
+              My Resume
+            </a>
 
-  <a 
-    href="/resume.pdf" download 
-    className='inline-block px-6 py-3 rounded-full text-white border border-white hover:scale-105 transition-transform duration-300'
-  >
-    My Resume
-  </a>
-</motion.div>
+            {/* Vertical divider */}
+            <div className='w-px h-8 bg-gray-600 hidden sm:block'></div>
 
-<div className='mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start'>
-  {socials.map(({icon,label,href})=>{
-    <motion.a href="href"
-    key={label}
-    target='_blank'
-    aria-label={label}
-    rel="noopener noreferrer"
-    variants={glowVariants}
-    initial="initial"
-    whileHover="hover"
-    className='text-gray-300'
-    >
-
-    </motion.a>
-  })}
-  
-</div>
-
-
+            {/* Social Icons same line mein */}
+            <div className='flex items-center gap-4 text-2xl'>
+              {socials.map(({ icon: Icon, label, href }) => (
+                <motion.a
+                  href={href}
+                  key={label}
+                  target='_blank'
+                  aria-label={label}
+                  rel="noopener noreferrer"
+                  variants={glowVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className='text-gray-300 hover:text-white transition-colors'
+                >
+                  <Icon />
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
 
         </div>
         </div>
         <div className='relative hidden lg:block'>
           <div
-  className='absolute top-1/2 -translate-y-1/2 pointer-events-none z-0'
-  style={{
-    right: "10px",
-    width: "min(22vw,760px)",
-    height: "min(22vw,760px)", // ✅ important
-    borderRadius: "50%",
-    filter: "blur(38px)",
-    opacity: 0.32,
-    background:
-      "conic-gradient(from 0deg, #1cd8d2, #00bf8f, #1cd8d2)",
-  }}
-/>
-          <motion.img src={avator} alt="Lokesh choudhary" className='absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none' style={{
-            right: "-30px" , width : "min(45vw , 780px)" , maxHeight : "90vh"
-          }}
-          initial={{opacity:0 , y:40, scale : 0.98}}
-          animate={{opacity:1 , y:0, scale : 1}}
-          transition={{delay:0.2,duration:0.8}}
+            className='absolute top-1/2 -translate-y-1/2 pointer-events-none z-0'
+            style={{
+              right: "10px",
+              width: "min(22vw,760px)",
+              height: "min(22vw,760px)",
+              borderRadius: "50%",
+              filter: "blur(38px)",
+              opacity: 0.32,
+              background: "conic-gradient(from 0deg, #1cd8d2, #00bf8f, #1cd8d2)",
+            }}
+          />
+          <motion.img
+            src={avator}
+            alt="Lokesh choudhary"
+            className='absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none'
+            style={{ right: "-30px", width: "min(45vw , 780px)", maxHeight: "90vh" }}
+            initial={{opacity:0 , y:40, scale : 0.98}}
+            animate={{opacity:1 , y:0, scale : 1}}
+            transition={{delay:0.2,duration:0.8}}
           />
         </div>
-
       </div>
     </section>
   )

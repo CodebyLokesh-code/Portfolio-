@@ -24,8 +24,9 @@ function App() {
       <CostomCursor/>
       {/* <ParticlesBackground/> */}
       <NavBar/>
-      <About/>
+      
       <Home/>
+      <About/>
       <Skils/>
       <Projects/>
       <Experience/>
